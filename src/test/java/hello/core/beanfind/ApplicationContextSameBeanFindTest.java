@@ -1,9 +1,7 @@
 package hello.core.beanfind;
 
-import hello.core.AppConfig;
-import hello.core.discount.DiscountPolicy;
 import hello.core.member.MemberRepository;
-import hello.core.member.MemoryMemberRepository;
+import hello.core.member.MemberRepositoryMemory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.NoUniqueBeanDefinitionException;
@@ -53,12 +51,12 @@ public class ApplicationContextSameBeanFindTest {
     static class SameBeanConfig {
         @Bean
         public MemberRepository memberRepository1() {
-            return new MemoryMemberRepository();
+            return new MemberRepositoryMemory();
         }
 
         @Bean
         public MemberRepository memberRepository2() {
-            return new MemoryMemberRepository();
+            return new MemberRepositoryMemory();
         }
 
 

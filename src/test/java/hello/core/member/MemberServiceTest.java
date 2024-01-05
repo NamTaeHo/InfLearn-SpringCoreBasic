@@ -22,7 +22,7 @@ public class MemberServiceTest {
     void join() {
 
         //given
-        Member member = new Member(1L, "memberA", Grade.VIP);
+        Member member = new Member(1L, "memberA", MemberGrade.VIP);
 
         //when
         memberService.join(member);

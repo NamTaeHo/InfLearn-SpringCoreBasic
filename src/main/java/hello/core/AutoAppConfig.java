@@ -1,7 +1,7 @@
 package hello.core;
 
 import hello.core.member.MemberRepository;
-import hello.core.member.MemoryMemberRepository;
+import hello.core.member.MemberRepositoryMemory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -16,7 +16,7 @@ public class AutoAppConfig {
 
     @Bean(name = "memoryMemberRepository")
     MemberRepository memberRepository(){
-        return new MemoryMemberRepository();
+        return new MemberRepositoryMemory();
     }
 
 
