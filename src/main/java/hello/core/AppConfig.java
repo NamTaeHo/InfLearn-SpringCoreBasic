@@ -24,6 +24,8 @@ public class AppConfig {
         return new OrderServiceImpl(memberRepository(),discountPolicy());
     }
     */
+
+
     @Bean
     public MemberService memberService() {
         System.out.println("call AppConfig.memberService");
@@ -48,6 +50,7 @@ public class AppConfig {
         //return new FixDiscountPolicy();
         return new RateDiscountPolicy();
     }
+
 
 
 }
