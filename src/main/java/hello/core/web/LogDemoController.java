@@ -20,9 +20,10 @@ public class LogDemoController {
     @RequestMapping("log-demo")
     @ResponseBody
     public String logDemo(HttpServletRequest request){
+        MyLogger myLogger = myLoggerProvider.getObject();
         String requestURL = request.getRequestURL().toString();
-        myLoggerProvider.getObject().setRequestURL(requestURL);
-        myLoggerProvider.getObject().log("controller test");
+        myLogger.setRequestURL(requestURL);
+        myLogger.log("controller test");
         logDemoService.logic("testId");
         return "OK";
 

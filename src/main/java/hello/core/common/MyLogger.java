@@ -19,18 +19,18 @@ public class MyLogger {
         this.requestURL = requestURL;
     }
 
-    public void log(String message){
-        System.out.println("["+uuid+"]["+requestURL+"] "+message);
+    public void log(String message) {
+        System.out.println("[" + this.uuid + "][" + this.requestURL + "] " + message);
     }
 
     @PostConstruct
-    public void init(){
-        String uuid = UUID.randomUUID().toString();
-        System.out.println("["+uuid+"] request scope bean create: " + this);
+    public void init() {
+        this.uuid = UUID.randomUUID().toString();
+        System.out.println("[" + this.uuid + "] request scope bean create: " + this);
     }
 
     @PreDestroy
-    public void close(){
-        System.out.println("["+uuid+"] request scope bean close: " + this);
+    public void close() {
+        System.out.println("[" + this.uuid + "] request scope bean close: " + this);
     }
 }
